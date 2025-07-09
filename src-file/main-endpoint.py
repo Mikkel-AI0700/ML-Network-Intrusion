@@ -8,9 +8,9 @@ from fastapi import FastAPI, Query
 from pydantic import BaseModel, Field
 
 main_api = FastAPI()
-logistic_regression_model = joblib.load("/home/mikkel/Desktop/ai-projects/machine-learning/computer-science/cybersecurity/intrusion-detection/models/logistic-regression-new.pkl")
-svc_model = joblib.load("/home/mikkel/Desktop/ai-projects/machine-learning/computer-science/cybersecurity/intrusion-detection/models/svc-new.pkl")
-decision_tree_model = joblib.load("/home/mikkel/Desktop/ai-projects/machine-learning/computer-science/cybersecurity/intrusion-detection/models/decision-tree-new.pkl")
+logistic_regression_model = joblib.load("/main-container/logistic-regression-new.pkl")
+svc_model = joblib.load("/main-container/svc-new.pkl")
+decision_tree_model = joblib.load("/main-container/decision-tree-new.pkl")
 
 class BaseFeatures (BaseModel):
     network_packet_size: Annotated[int, Field(..., strict=True)]
